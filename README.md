@@ -10,4 +10,6 @@ sqlalchemy.exc.NoSuchModuleError: Can't load plugin: sqlalchemy.dialects:postgre
 Please see the screenshot.
 
 
+![Error with the flask db init](https://raw.githubusercontent.com/antdinodev/fyyur-project/main/no%20such%20module%20error.JPG)
+
 
