@@ -11,7 +11,7 @@ from flask_sqlalchemy import SQLAlchemy
 import logging
 from logging import Formatter, FileHandler
 from flask_wtf import Form
-from utilities import login
+
 from flask_migrate import Migrate
 
 from forms import *
@@ -19,8 +19,6 @@ from forms import *
 # App Config.
 #----------------------------------------------------------------------------#
 
-port = "localhost:5432"
-database = "fyuur"
 
 
 app = Flask(__name__)
@@ -29,10 +27,10 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 
 # done: connect to a local postgresql database
-connection_uri = f"postgres://{login.USER}:{login.SECRET_KEY}@{port}/{database}"
-app.config['SQLALCHEMY_DATABASE_URI'] = connection_uri
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+#connection_uri = f"postgres://{login.USER}:{login.SECRET_KEY}@{port}/{database}"
+#app.config['SQLALCHEMY_DATABASE_URI'] = connection_uri
+#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 migrate = Migrate(app, db)
 
 #----------------------------------------------------------------------------#
